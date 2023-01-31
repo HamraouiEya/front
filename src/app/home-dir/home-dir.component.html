@@ -1,0 +1,32 @@
+<h1 class="font-weight-bold text-center">Espace directeur</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Liste des demandes de congés</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Emetteur</th>
+            <th>Demande</th>
+            <th>Date demande</th>
+            <th>Décision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dem of users | async">
+            <td>{{dem.first_name}} {{dem.last_name}}</td>
+            <td> <a href="/dem" class="text-black-50 fw-bold" >voir demande</a></td>
+            <td>{{dem.date_dem}}</td>
+            <td>
+                <button class="btn mt-4 pt-2" type="button" (click)="accept()">Accepter</button>
+
+                <button class="btn mt-4 pt-2" type="button" (click)="refus()">Refuser</button>
+               
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
